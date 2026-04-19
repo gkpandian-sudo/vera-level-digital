@@ -1,0 +1,90 @@
+/* -- Vera Level Digital — Global Styles --
+   CSS custom properties drive every color token.
+   Toggling .dark on <html> switches the entire palette instantly.
+   All tokens use space-separated RGB channels so Tailwind's opacity
+   modifier syntax (bg-surface/80) works without any extra config.        */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Font faces (loaded via next/font in layout.tsx) ─────────────────── */
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-space-grotesk: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* ── Light theme (default) ──────────────────────────────────────────── */
+:root {
+  --color-primary:     0 98 255;
+  --color-surface:     255 255 255;
+  --color-sv:          244 244 245;
+  --color-on-surface:  9 9 11;
+  --color-osv:         82 82 91;
+  --color-outline:     228 228 231;
+  --color-success:     0 166 90;
+  --color-gold:        184 134 42;   /* #b8862a */
+}
+
+/* ── Dark theme ──────────────────────────────────────────────────────── */
+.dark {
+  --color-primary:     0 98 255;
+  --color-surface:     10 10 10;
+  --color-sv:          26 26 26;
+  --color-on-surface:  255 255 255;
+  --color-osv:         161 161 170;
+  --color-outline:     39 39 42;
+  --color-success:     0 228 117;
+  --color-gold:        232 201 106;  /* #e8c96a */
+}
+
+/* ── Base resets ────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-on-surface));
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Smooth theme transitions */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk);
+}
+
+/* ── Glassmorphism utility ──────────────────────────────────────────── */
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Marquee animation ──────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* ── Tamil text line-height fix ─────────────────────────────────────── */
+.tamil-text {
+  line-height: 1.75;
+}
+
+/* ── Custom scrollbar (dark mode) ───────────────────────────────────── */
+.dark ::-webkit-scrollbar         { width: 6px; }
+.dark ::-webkit-scrollbar-track   { background: rgb(var(--color-surface)); }
+.dark ::-webkit-scrollbar-thumb   { background: rgb(var(--color-outline)); border-radius: 3px; }

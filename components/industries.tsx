@@ -42,8 +42,8 @@ const industries: Industry[] = [
     name: "உணவகம் & கஃபே",
     sub: "Restaurants · Cafes · Cloud Kitchens · Catering",
     pitch:
-      "Zomato, Swiggy ஒவ்வொரு order-க்கும் 25-30% எடுக்கிறது. ",
-    bold: "உங்கள் சொந்த website மூலம் direct orderscommission இல்லாமல்.",
+      "Zomato, Swiggy-க்கு ஒவ்வொரு order-லும் 25-30% commission போகிறது. ",
+    bold: "உங்கள் சொந்த website இருந்தால், அந்த பணம் முழுவதும் உங்களுக்கே.",
     benefits: [
       "Direct online orderingaggregator commission முழுவதும் உங்களுக்கே",
       "Digital menu with photosaverage order value அதிகரிக்கும்",
@@ -58,8 +58,8 @@ const industries: Industry[] = [
     name: "கல்வி & கோச்சிங்",
     sub: "Coaching Centres · Colleges · Skill Institutes · Tutors",
     pitch:
-      "பெற்றோர்கள் online-ல் தேடி decide செய்கிறார்கள். ",
-    bold: "உங்கள் centre இணையத்தில் இல்லாவிட்டால், அது இல்லாததற்கு சமம்.",
+      "இன்றைய பெற்றோர்கள் online-ல் தேடி, பார்த்து, decide செய்கிறார்கள். ",
+    bold: "உங்கள் centre அவர்கள் கண்ணில் முதலில் படட்டும்.",
     benefits: [
       "Online admission portalpaperwork இல்லாமல் enrolment",
       "Result showcase & testimonialsword-of-mouth digital-ஆக",
@@ -205,13 +205,11 @@ export default function Industries() {
             variants={fadeInUp}
             className="text-base font-light leading-relaxed text-on-surface-variant tamil-text"
           >
-            ஒவ்வொரு வணிகமும் வித்தியாசமானதுவேறு வேறு customers, வேறு வேறு
-            problems, வேறு வேறு goals. நாங்கள் generic websites உருவாக்குவதில்லை.{" "}
-            <strong className="font-medium text-on-surface">
-              உங்கள் industry-யின் உண்மையான பிரச்சினைகளை தீர்க்கும் targeted
-              digital platforms
-            </strong>{" "}
-            மட்டுமே உருவாக்குகிறோம்.
+            ஒவ்வொரு வணிகத்திற்கும் ஒரு தனித்துவமான கதை இருக்கிறது — உங்கள்
+            customers வேறு, உங்கள் இலக்குகள் வேறு. அதனால்தான் நாங்கள்
+            ready-made sites உருவாக்குவதில்லை. உங்கள் industry-ஐ
+            புரிந்துகொண்டு, உங்கள் வாடிக்கையாளர்களை ஈர்க்கும் platform
+            உருவாக்குகிறோம்.
           </motion.p>
         </motion.div>
 

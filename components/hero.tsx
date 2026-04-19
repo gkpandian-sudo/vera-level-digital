@@ -8,8 +8,8 @@ const WA_LINK =
 
 const badges = [
   "Free Consultation",
-  "Ready in 7-14 Days",
-  "Starting ₹10,000",
+  "Live in 7-14 Days",
+  "Starting at ₹10,000",
 ]
 
 export default function Hero() {
@@ -39,9 +39,9 @@ export default function Hero() {
             variants={fadeInUp}
             className="font-headline text-4xl lg:text-5xl font-bold leading-[1.2] mb-5 tamil-text"
           >
-            இணையம் மூலம் அதிக{" "}
-            <span className="text-primary">வாடிக்கையாளர்களை</span>{" "}
-            பெறுங்கள்
+            உங்கள் வணிகம்{" "}
+            <span className="text-primary">online-ல்</span>{" "}
+            பிரகாசிக்கட்டும்
           </motion.h1>
 
           {/* Sub-copy */}
@@ -49,10 +49,9 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-base text-on-surface-variant max-w-lg mb-7 tamil-text leading-relaxed"
           >
-            பெரும்பாலான வணிக உரிமையாளர்களுக்கு இணையதளம் உருவாக்க நேரமோ
-            தொழில்நுட்ப அறிவோ இல்லை. WhatsApp‑ல் உங்கள் வணிகத்தைப் பற்றி
-            சொல்லுங்கள்வடிவமைப்பு முதல் இணையத்தில் தொடங்குவது வரை நாங்கள்
-            செய்கிறோம்.
+            உங்கள் வணிகத்தை online-ல் கொண்டு வர விரும்புகிறீர்களா?
+            WhatsApp-ல் உங்கள் கதையை பகிருங்கள் — வடிவமைப்பு முதல் launch
+            வரை நாங்கள் அனைத்தும் கவனித்துக்கொள்கிறோம்.
           </motion.p>
 
           {/* CTAs */}
@@ -137,18 +136,18 @@ export default function Hero() {
                 <div className="flex-1">
                   <div className="text-[7px] text-primary font-bold tracking-widest uppercase mb-1.5">⚡ Blazing Fast Performance</div>
                   <div className="text-[11px] font-black text-on-surface leading-tight mb-1.5">
-                    Get More Customers<br />
-                    <span className="text-primary">Through the Web</span>
+                    Grow Your Business<br />
+                    <span className="text-primary">Online — Starting Today</span>
                   </div>
                   <div className="text-[7px] text-on-surface-variant leading-relaxed mb-2.5 max-w-[140px]">
-                    WhatsApp us about your business. We handle design, code and launch.
+                    Tell us about your business on WhatsApp, and we'll take care of everything — from design to launch. No technical knowledge needed on your end.
                   </div>
                   <div className="flex gap-1.5 mb-2">
                     <span className="text-[7px] bg-primary text-white px-2.5 py-1 rounded font-bold">💬 Free Consultation</span>
                     <span className="text-[7px] border border-outline text-on-surface-variant px-2.5 py-1 rounded font-medium">Our Work</span>
                   </div>
                   <div className="flex gap-2">
-                    {["✓ Free Consult","✓ 7-14 Days","✓ From ₹10k"].map(b => (
+                    {["✓ Free Consultation","✓ Live in 7-14 Days","✓ Starting at ₹10,000"].map(b => (
                       <span key={b} className="text-[6px] text-on-surface-variant">{b}</span>
                     ))}
                   </div>

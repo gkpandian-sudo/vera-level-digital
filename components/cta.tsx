@@ -24,15 +24,15 @@ export default function Cta() {
             variants={fadeInUp}
             className="font-headline text-4xl font-bold mb-6 tamil-text"
           >
-            உங்கள் வணிகத்தை டிஜிட்டல் முறைக்கு மாற்றத் தயாரா?
+            உங்கள் வணிகத்தை online-ல் கொண்டு செல்ல தயாராகிவிட்டீர்களா?
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="opacity-90 mb-6 max-w-xl mx-auto tamil-text"
           >
-            இலவச ஆலோசனை, எந்த commitment-உம் இல்லை. உங்கள் வணிகத்தைப் பற்றி
-            சொல்லுங்கள்A முதல் Z வரை நாங்கள் செய்கிறோம்.
+            இலவசமாக, எந்த அழுத்தமும் இல்லாமல் பேசலாம். உங்கள் கனவை
+            சொல்லுங்கள் — மீதி நாங்கள் கவனித்துக்கொள்கிறோம்.
           </motion.p>
 
           {/* Badge row */}

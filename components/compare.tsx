@@ -5,11 +5,11 @@ import { X, Check } from "lucide-react"
 import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, inView } from "@/lib/motion"
 
 const wordpress = [
-  "மெதுவான லோடிங் வேகம் (3-7s)",
-  "Hacking மற்றும் plugin அபாயங்கள்",
-  "மாதாந்திர அப்டேட்கள் மற்றும் பராமரிப்பு",
-  "வரையறுக்கப்பட்ட வடிவமைப்பு சுதந்திரம்",
-  "மாதாந்திர hosting & plugin கட்டணங்கள்",
+  "பொதுவாக மெதுவாக load ஆகும் (3-7 விநாடிகள்)",
+  "Plugin-களால் security risks அதிகம்",
+  "தொடர்ந்து update மற்றும் பராமரிப்பு தேவை",
+  "Design-ல் சில கட்டுப்பாடுகள் உண்டு",
+  "மாத மாத செலவுகள் தொடரும்",
 ]
 
 const nextjs = [
@@ -43,7 +43,7 @@ export default function Compare() {
           {/* WordPress column */}
           <motion.div variants={fadeInLeft} className="bg-surface p-8 md:border-r border-outline">
             <h3 className="font-bold text-red-500 mb-6 flex items-center gap-2">
-              <span>🚫</span> WordPress / CMS
+              <span>⚠️</span> Traditional CMS (WordPress-style)
             </h3>
             <ul className="space-y-4">
               {wordpress.map((item) => (

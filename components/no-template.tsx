@@ -22,15 +22,15 @@ export default function NoTemplate() {
           variants={fadeInUp}
           className="font-headline text-3xl font-bold mb-4 tamil-text"
         >
-          நாங்கள் உருவாக்குவது{" "}
+          நாங்கள் உருவாக்குவது உங்களுக்கே உரிய,{" "}
           <span className="px-2 py-1 bg-on-surface text-surface">
-            பூஜ்யம் டெம்ப்ளேட்.
+            முற்றிலும் தனிப்பட்ட வடிவமைப்பு.
           </span>
         </motion.h2>
 
         <motion.p variants={fadeInUp} className="text-on-surface-variant max-w-2xl mx-auto text-sm tamil-text">
-          நாங்கள் React.js மற்றும் Next.js கொண்டு புதிதாக குறியீடு செய்கிறோம்.
-          WordPress போன்ற பழைய முறைகள் அல்ல.
+          நாங்கள் React.js மற்றும் Next.js கொண்டு புதிதாக உருவாக்குகிறோம் —
+          உங்கள் வணிகத்திற்காகவே, scratch-ல் இருந்து.
         </motion.p>
       </motion.div>
     </section>

@@ -28,7 +28,7 @@ const tiers: Tier[] = [
       "Vercel hosting",
       "1 revision",
     ],
-    cta:   "Choose Plan",
+    cta:   "Get Started",
     waMsg: "Hello%2C%20I%27m%20interested%20in%20the%20Starter%20package.",
   },
   {
@@ -44,7 +44,7 @@ const tiers: Tier[] = [
       "Google Analytics",
       "3 revisions",
     ],
-    cta:     "Start Now",
+    cta:     "Let's Begin",
     waMsg:   "Hello%2C%20I%27m%20interested%20in%20the%20Standard%20package.",
     popular: true,
   },
@@ -61,7 +61,7 @@ const tiers: Tier[] = [
       "Unlimited revisions",
       "1 month support",
     ],
-    cta:   "Get a Quote",
+    cta:   "Discuss My Project",
     waMsg: "Hello%2C%20I%27d%20like%20to%20discuss%20a%20custom%20project.",
   },
 ]

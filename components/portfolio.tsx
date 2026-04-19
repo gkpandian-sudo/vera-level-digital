@@ -60,7 +60,7 @@ export default function Portfolio() {
               variants={fadeInUp}
               className="text-xs font-bold tracking-[0.2em] text-primary uppercase mb-4 block"
             >
-              GitHub Projects
+              Recent Work
             </motion.span>
             <motion.h2 variants={fadeInUp} className="font-headline text-4xl font-bold">
               Our Work

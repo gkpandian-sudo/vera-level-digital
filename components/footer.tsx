@@ -25,8 +25,7 @@ export default function Footer() {
           <motion.div variants={fadeInUp}>
             <div className="font-headline text-lg font-bold mb-6">Vera Level Digital</div>
             <p className="text-on-surface-variant leading-relaxed tamil-text">
-              தமிழகத்தின் அதிவேக இணையதள மேம்பாட்டு நிறுவனம். React.js மற்றும்
-              Next.js கொண்டு உயர்தர, custom web solutions.
+              தமிழகத்தின் வணிகங்களுக்காக, நவீன தொழில்நுட்பத்தில் உருவாக்கப்பட்ட custom web solutions.
             </p>
           </motion.div>
 
@@ -82,7 +81,7 @@ export default function Footer() {
           variants={fadeInUp}
           className="mt-16 pt-8 border-t border-outline text-center text-on-surface-variant text-xs tamil-text"
         >
-          © 2025 Vera Level Digital. All rights reserved.
+          © 2026 Vera Level Digital. All rights reserved.
         </motion.div>
 
       </div>

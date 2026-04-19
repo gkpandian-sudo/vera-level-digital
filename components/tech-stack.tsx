@@ -42,7 +42,7 @@ export default function TechStack() {
             <span className="text-primary">Tech Stack</span>
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-on-surface-variant tamil-text">
-            Netflix, Airbnb, மற்றும் உலகின் சிறந்த companies பயன்படுத்தும் அதே தொழில்நுட்பம்.
+            Netflix, Airbnb போன்ற உலகின் முன்னணி நிறுவனங்கள் நம்பும் அதே தொழில்நுட்பம் — இப்போது உங்கள் வணிகத்திற்காக.
           </motion.p>
         </motion.div>
 

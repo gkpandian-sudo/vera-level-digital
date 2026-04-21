@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { fadeInUp, scaleIn, staggerContainer, inView, EASE } from "@/lib/motion"
 
 const WA_LINK =
-  "https://wa.me/919632233776?text=Hello%2C%20I%27d%20like%20a%20free%20consultation%20for%20my%20business%20website."
+  "https://wa.me/919632233776?text=Hello%2C%20I%27d%20like%20a%20free%20mock%20of%20my%20homepage.%20My%20business%20name%20is%3A"
 
-const badges = ["Free Consultation", "Quick Response", "Real Portfolio", "Mobile-Friendly"]
+const badges = ["24h-ல் Free Homepage Mock", "Quick Response", "Real Portfolio", "Mobile-Friendly"]
 
 export default function Cta() {
   return (
@@ -31,8 +31,7 @@ export default function Cta() {
             variants={fadeInUp}
             className="opacity-90 mb-6 max-w-xl mx-auto tamil-text"
           >
-            இலவச ஆலோசனை, எந்த commitment-உம் இல்லை. உங்கள் வணிகத்தைப் பற்றி
-            சொல்லுங்கள்A முதல் Z வரை நாங்கள் செய்கிறோம்.
+            உங்கள் வணிகப் பெயரை WhatsApp-ல் அனுப்புங்கள் — 24 மணி நேரத்தில் உங்கள் homepage-இன் இலவச mock அனுப்புகிறோம். எந்த commitment-உம் இல்லை.
           </motion.p>
 
           {/* Badge row */}
@@ -54,7 +53,7 @@ export default function Cta() {
             whileTap={{ scale: 0.96 }}
             className="bg-white text-primary px-10 py-5 rounded-xl font-black text-lg shadow-2xl inline-flex items-center gap-3 hover:opacity-95 transition-opacity"
           >
-            💬 Chat on WhatsApp
+            💬 WhatsApp பண்ணுங்கள் — Free Mock பெறுங்கள்
           </motion.a>
         </motion.div>
       </motion.div>

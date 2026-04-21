@@ -14,19 +14,27 @@ const items: Item[] = [
   },
   {
     q: "இணையதளம் எவ்வளவு நேரத்தில் தயாராகும்?",
-    a: "Starter: 5-7 நாட்கள். Standard: 10-14 நாட்கள். Custom: 14-30 நாட்கள். உங்கள் வணிக தகவல்களை WhatsApp-ல் அனுப்பியவுடன் work தொடங்கும்.",
+    a: "Digital Visiting Card: 5 நாட்கள். Business Website: 12 நாட்கள். Revenue Engine: 14-30 நாட்கள். WhatsApp-ல் தகவல் அனுப்பியவுடன் work தொடங்கும்.",
+  },
+  {
+    q: "Payment செய்வதற்கு முன் draft பார்க்கலாமா?",
+    a: "நிச்சயமாக! வணிகப் பெயரை WhatsApp-ல் அனுப்புங்கள் — 24 மணி நேரத்தில் இலவச homepage mock அனுப்புகிறோம். திருப்தியாக இருந்தால் மட்டுமே payment.",
+  },
+  {
+    q: "Result பிடிக்கவில்லை என்றால்?",
+    a: "ஒவ்வொரு package-லும் revision rounds உள்ளது. நீங்கள் 100% satisfied ஆகும் வரை changes செய்கிறோம். Business Website package-ல் launch-க்கு பிறகு 30 நாள் support உள்ளது.",
+  },
+  {
+    q: "இணையதளை நானே update செய்யலாமா?",
+    a: "முழு source code GitHub-ல் உங்களுக்கு சொந்தமாக இருக்கும். எந்த நேரமும் changes செய்யலாம். Basic editing guide-ம் தருகிறோம். அல்லது WhatsApp-ல் சொல்லுங்கள் — நாங்கள் செய்கிறோம்.",
   },
   {
     q: "SEO செய்யப்படுமா?",
-    a: "நிச்சயமாக! இணையத்தில் உங்கள் இணையதளம் முன்னணியில் வர அனைத்து அடிப்படை SEO வேலைகளும் செய்யப்படும். Standard மற்றும் Custom package-ல் full SEO, meta tags, மற்றும் Google Analytics included.",
+    a: "நிச்சயமாக! Business Website மற்றும் Revenue Engine package-ல் full SEO, meta tags, Google Analytics மற்றும் Search Console setup included.",
   },
   {
     q: "Hosting மற்றும் domain செலவு எவ்வளவு?",
     a: "Vercel-ல் hosting இலவசம். மாதாந்திர கட்டணம் இல்லை. Domain பெயர் மட்டும் ஆண்டுக்கு ~₹800-1,500 செலவாகும்.",
-  },
-  {
-    q: "இணையதளை பின்னர் மாற்றலாமா?",
-    a: "முழு source code GitHub-ல் உங்களுக்கு சொந்தமாக இருக்கும். எந்த நேரமும் changes செய்யலாம். நாங்களும் revision support அளிக்கிறோம்.",
   },
 ]
 

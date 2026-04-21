@@ -64,6 +64,12 @@ export default function Footer() {
                 💬 +91 96322 33776
               </a>
               <a
+                href="mailto:hello@veraleveldigital.in"
+                className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors"
+              >
+                ✉️ hello@veraleveldigital.in
+              </a>
+              <a
                 href="https://github.com/gkpandian-sudo"
                 target="_blank"
                 rel="noopener noreferrer"

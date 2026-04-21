@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import { heroContainer, fadeInRight, fadeInUp, scaleIn, EASE } from "@/lib/motion"
 
 const WA_LINK =
-  "https://wa.me/919632233776?text=Hello%2C%20I%27d%20like%20a%20free%20consultation%20for%20my%20website."
+  "https://wa.me/919632233776?text=Hello%2C%20I%27d%20like%20a%20free%20mock%20of%20my%20homepage.%20My%20business%20name%20is%3A"
 
 const badges = [
-  "Free Consultation",
-  "Ready in 7-14 Days",
-  "Starting ₹10,000",
+  "24 மணி நேரத்தில் Free Mock",
+  "7-14 நாளில் Ready",
+  "₹12,000 முதல்",
 ]
 
 export default function Hero() {
@@ -39,9 +39,9 @@ export default function Hero() {
             variants={fadeInUp}
             className="font-headline text-4xl lg:text-5xl font-bold leading-[1.2] mb-5 tamil-text"
           >
-            இணையம் மூலம் அதிக{" "}
-            <span className="text-primary">வாடிக்கையாளர்களை</span>{" "}
-            பெறுங்கள்
+            உங்கள் வணிகத்துக்கு Netflix-level{" "}
+            <span className="text-primary">வேகமான website</span>{" "}
+            — ஒரே ஒரு payment, 7 நாளில் ready.
           </motion.h1>
 
           {/* Sub-copy */}
@@ -49,7 +49,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-base text-on-surface-variant max-w-lg mb-7 tamil-text leading-relaxed"
           >
-            இணையதளம் அமைப்பதற்கான தொழில்நுட்பக் கருவிகள் மற்றும் டிஜிட்டல் தொழில்நுட்பம் குறித்த புரிதல் இல்லாததுடன், அதற்காகச் செலவிட போதிய நேரமும் பெரும்பாலான வணிகர்களுக்கு ஒரு தடையாக உள்ளது. WhatsApp‑ல் உங்கள் வணிகத்தைப் பற்றி சொல்லுங்கள்வடிவமைப்பு முதல் இணையத்தில் தொடங்குவது வரை நாங்கள் செய்கிறோம்.
+            WordPress இல்லை. மாதாந்திர கட்டணம் இல்லை. Coding தெரியாவிட்டாலும் பரவாயில்லை. உங்கள் வணிகப் பெயரை WhatsApp-ல் அனுப்புங்கள் — 24 மணி நேரத்தில் உங்கள் homepage-இன் இலவச mock அனுப்புகிறோம்.
           </motion.p>
 
           {/* CTAs */}
@@ -66,7 +66,7 @@ export default function Hero() {
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.547 4.14 1.587 5.946L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896.002-3.176-1.24-6.165-3.48-8.45zM12.045 21.785h-.004c-1.774 0-3.513-.474-5.03-1.37l-.361-.213-3.741.977.998-3.645-.235-.374a9.86 9.86 0 01-1.516-5.26c.001-5.45 4.436-9.884 9.889-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.881 9.884zm5.422-7.403c-.297-.148-1.758-.867-2.03-.967-.273-.099-.471-.148-.669.148-.197.296-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.148-1.255-.461-2.39-1.462-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.521.15-.173.198-.296.297-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               </svg>
-              Free Consultation
+              WhatsApp பண்ணுங்கள் — Free Mock
             </motion.a>
             <motion.a
               href="#portfolio"
@@ -111,7 +111,7 @@ export default function Hero() {
                 <svg className="w-3 h-3 text-success shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
                 </svg>
-                vera-level-digital.vercel.app
+                veraleveldigital.in
               </div>
             </div>
 
@@ -134,18 +134,18 @@ export default function Hero() {
                 <div className="flex-1">
                   <div className="text-[7px] text-primary font-bold tracking-widest uppercase mb-1.5">⚡ Blazing Fast Performance</div>
                   <div className="text-[11px] font-black text-on-surface leading-tight mb-1.5">
-                    Get More Customers<br />
-                    <span className="text-primary">Through the Web</span>
+                    Netflix-level வேகமான<br />
+                    <span className="text-primary">website — 7 நாளில் ready</span>
                   </div>
                   <div className="text-[7px] text-on-surface-variant leading-relaxed mb-2.5 max-w-[140px]">
-                    WhatsApp us about your business. We handle design, code and launch.
+                    வணிகப் பெயர் அனுப்புங்கள் — 24 மணி நேரத்தில் free mock.
                   </div>
                   <div className="flex gap-1.5 mb-2">
-                    <span className="text-[7px] bg-primary text-white px-2.5 py-1 rounded font-bold">💬 Free Consultation</span>
+                    <span className="text-[7px] bg-primary text-white px-2.5 py-1 rounded font-bold">💬 Free Mock</span>
                     <span className="text-[7px] border border-outline text-on-surface-variant px-2.5 py-1 rounded font-medium">Our Work</span>
                   </div>
                   <div className="flex gap-2">
-                    {["✓ Free Consult","✓ 7-14 Days","✓ From ₹10k"].map(b => (
+                    {["✓ 24h Mock","✓ 7-14 Days","✓ From ₹12k"].map(b => (
                       <span key={b} className="text-[6px] text-on-surface-variant">{b}</span>
                     ))}
                   </div>

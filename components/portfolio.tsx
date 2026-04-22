@@ -5,13 +5,14 @@ import { ExternalLink, Github } from "lucide-react"
 import { fadeInUp, staggerContainer, inView, EASE } from "@/lib/motion"
 
 type Project = {
-  icon:    string
-  color:   string          // Tailwind bg + border classes for the icon badge
-  title:   string
-  desc:    string
-  tags:    string[]
-  segment: string
-  href:    string
+  icon:      string
+  color:     string          // Tailwind bg + border classes for the icon badge
+  title:     string
+  desc:      string
+  tags:      string[]
+  segment:   string
+  href:      string
+  linkLabel?: string         // overrides "GitHub →" in card footer
 }
 
 const projects: Project[] = [
@@ -41,6 +42,16 @@ const projects: Project[] = [
     tags:    ["HTML", "Personal Project"],
     segment: "Portfolio",
     href:    "https://github.com/gkpandian-sudo/pandian",
+  },
+  {
+    icon:      "🍽️",
+    color:     "bg-[#f5921e]/10 border-[#f5921e]/20",
+    title:     "Murugan Mess",
+    desc:      "சென்னை heritage உணவகம் — Zomato/Swiggy commission இல்லாமல் direct online ordering. Banana leaf experience, digital-ஆக.",
+    tags:      ["HTML/CSS", "JavaScript", "Live Demo"],
+    segment:   "Food & Restaurant",
+    href:      "https://murugan-mess.netlify.app/menu",
+    linkLabel: "Live Site →",
   },
 ]
 
@@ -135,7 +146,7 @@ export default function Portfolio() {
                   rel="noopener noreferrer"
                   className="text-xs text-primary hover:underline flex items-center gap-1 font-medium"
                 >
-                  GitHub →
+                  {p.linkLabel ?? "GitHub →"}
                 </a>
               </div>
             </motion.article>

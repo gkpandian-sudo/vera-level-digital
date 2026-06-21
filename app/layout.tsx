@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Instrument_Sans, Instrument_Serif, JetBrains_Mono, Noto_Sans_Devanagari } from "next/font/google"
+import { Instrument_Sans, Instrument_Serif, JetBrains_Mono, Noto_Sans_Devanagari, Noto_Sans_Tamil } from "next/font/google"
 import Script from "next/script"
 import { ThemeProvider, themeScript } from "@/lib/theme"
 import { LangProvider } from "@/lib/i18n"
@@ -32,6 +32,13 @@ const notoDevanagari = Noto_Sans_Devanagari({
   display: "swap",
 })
 
+const notoTamil = Noto_Sans_Tamil({
+  subsets: ["tamil"],
+  variable: "--font-tamil",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title:       "Vera Level Digital — Web Solutions for India Businesses",
   description: "Custom Next.js websites for Tamil, Hindi & English-speaking businesses. Starting ₹10,000.",
@@ -47,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ta" className="dark" suppressHydrationWarning>
       <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
-      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${notoDevanagari.variable} font-sans`}>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${notoDevanagari.variable} ${notoTamil.variable} font-sans`}>
         <ThemeProvider>
           <LangProvider>
             {children}

@@ -1,106 +1,97 @@
-// -- Dhamaka Digital Footer — /hi page variant --
-// Shows "Dhamaka Digital" brand name and a back-link to main site.
-
 "use client"
 
 import { motion } from "framer-motion"
-import { Github } from "lucide-react"
 import { fadeInUp, staggerContainer, inView } from "@/lib/motion"
 import { useLang } from "@/lib/i18n"
 
 export default function HindiFooter() {
   const { t } = useLang()
-  const navLinks = t.nav.links.slice(0, 3)
+  const navLinks = t.nav.links
 
   return (
-    <footer className="py-16 px-6 border-t border-outline bg-surface text-sm">
+    <footer className="border-t border-foreground/10 py-20 px-6">
       <div className="max-w-7xl mx-auto">
 
+        {/* Top row: logo + nav links */}
         <motion.div
           {...inView}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mb-12"
         >
-          {/* Brand */}
+          {/* DD Logo */}
           <motion.div variants={fadeInUp}>
-            <div className="font-headline text-lg font-bold mb-2 flex items-center gap-2">
+            <div className="font-display text-2xl select-none">
               <span className="text-[#f97316]">D</span>
               <span className="text-primary">D</span>
-              <span className="text-on-surface ml-1">धमाका Digital</span>
             </div>
-            <p className="text-on-surface-variant text-xs mb-3 leading-relaxed">
-              Powered by Vera Level Digital
+            <p className="font-mono text-xs text-muted-foreground mt-1 tracking-widest">
+              धमाका Digital
             </p>
-            <p className="text-on-surface-variant leading-relaxed">
-              {t.footer.tagline}
-            </p>
-            <a
-              href="/"
-              className="inline-block mt-4 text-xs text-primary hover:underline"
-            >
-              ← Vera Level Digital (Tamil site)
-            </a>
           </motion.div>
 
-          {/* Links */}
-          <motion.div variants={fadeInUp}>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] text-[#f97316] mb-6">
-              {t.footer.quickLinks}
-            </h4>
-            <div className="flex flex-col gap-3">
-              {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  className="text-on-surface-variant hover:text-on-surface transition-colors"
-                >
-                  {l.label}
-                </a>
-              ))}
+          {/* Nav links */}
+          <motion.nav
+            variants={fadeInUp}
+            className="flex flex-wrap gap-x-6 gap-y-3"
+          >
+            {navLinks.map((l) => (
               <a
-                href="https://github.com/gkpandian-sudo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-on-surface-variant hover:text-on-surface transition-colors"
+                key={l.href}
+                href={l.href}
+                className="relative group text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                GitHub
+                {l.label}
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
               </a>
-            </div>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div variants={fadeInUp}>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] text-[#f97316] mb-6">
-              {t.footer.contact}
-            </h4>
-            <div className="flex flex-col gap-4">
-              <a
-                href="https://wa.me/919632233776"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors"
-              >
-                💬 +91 96322 33776
-              </a>
-              <a
-                href="https://github.com/gkpandian-sudo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors"
-              >
-                <Github size={14} /> github.com/gkpandian-sudo
-              </a>
-            </div>
-          </motion.div>
+            ))}
+          </motion.nav>
         </motion.div>
 
-        {/* Copyright */}
+        {/* Middle row: tagline + WhatsApp */}
         <motion.div
           {...inView}
           variants={fadeInUp}
-          className="mt-16 pt-8 border-t border-outline text-center text-on-surface-variant text-xs"
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
         >
-          © 2025 Dhamaka Digital — धमाका डिजिटल. Vera Level Digital द्वारा संचालित।
+          <p className="text-sm text-muted-foreground max-w-sm">{t.footer.tagline}</p>
+
+          <a
+            href="https://wa.me/919632233776"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            💬 +91 96322 33776
+            <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+          </a>
+        </motion.div>
+
+        {/* Bottom bar */}
+        <motion.div
+          {...inView}
+          variants={fadeInUp}
+          className="border-t border-foreground/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
+          <span className="font-mono text-xs text-muted-foreground">
+            {t.footer.copyright}
+          </span>
+
+          <div className="flex gap-6">
+            <a
+              href="/"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              ← Vera Level Digital
+            </a>
+            <a
+              href="https://github.com/gkpandian-sudo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
         </motion.div>
 
       </div>

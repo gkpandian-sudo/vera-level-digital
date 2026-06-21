@@ -54,6 +54,7 @@ interface ValueT {
 
 // ── Services ──────────────────────────────────────────────────────────
 interface ServicesT {
+  eyebrow: string
   headline: string
   sub: string
   items: { icon: string; title: string; body: string }[]
@@ -73,7 +74,9 @@ interface TechStackT {
 
 // ── Compare ───────────────────────────────────────────────────────────
 interface CompareT {
+  eyebrow: string
   headline: string
+  vldLabel: string
   wordpress: string[]
   nextjs: string[]
 }
@@ -228,6 +231,7 @@ const ta: Translations = {
     ],
   },
   services: {
+    eyebrow: "எங்கள் சேவைகள்",
     headline: "Website & Digital Services",
     sub: "நவீன தொழில்நுட்பங்களுடன் உருவாக்கப்பட்ட உயர்தர தீர்வுகள்.",
     items: [
@@ -253,7 +257,9 @@ const ta: Translations = {
     ],
   },
   compare: {
-    headline: "WordPress vs Modern Tech Stack",
+    eyebrow: "ஏன் நாங்கள்?",
+    headline: "WordPress vs நவீன Tech Stack",
+    vldLabel: "நவீன Tech Stack",
     wordpress: [
       "மெதுவான லோடிங் வேகம் (3-7s)",
       "Hacking மற்றும் plugin அபாயங்கள்",
@@ -399,6 +405,7 @@ const hi: Translations = {
     ],
   },
   services: {
+    eyebrow: "हमारी सेवाएं",
     headline: "वेबसाइट और डिजिटल सेवाएं",
     sub: "आधुनिक तकनीक से बने उच्च-गुणवत्ता के समाधान।",
     items: [
@@ -424,7 +431,9 @@ const hi: Translations = {
     ],
   },
   compare: {
+    eyebrow: "क्यों हम?",
     headline: "WordPress vs आधुनिक Tech Stack",
+    vldLabel: "आधुनिक Tech Stack",
     wordpress: [
       "धीमी loading speed (3-7s)",
       "Hacking और plugin के खतरे",
@@ -570,6 +579,7 @@ const en: Translations = {
     ],
   },
   services: {
+    eyebrow: "Our Services",
     headline: "Website & Digital Services",
     sub: "Premium solutions built with modern technology.",
     items: [
@@ -595,7 +605,9 @@ const en: Translations = {
     ],
   },
   compare: {
+    eyebrow: "Why Us",
     headline: "WordPress vs Modern Tech Stack",
+    vldLabel: "Modern Tech Stack",
     wordpress: [
       "Slow loading speed (3-7s)",
       "Hacking and plugin vulnerabilities",

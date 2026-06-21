@@ -23,7 +23,7 @@ export default function Compare() {
         >
           <span className="w-8 h-px bg-foreground/30" />
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            Why Us
+            {c.eyebrow}
           </span>
         </motion.div>
 
@@ -35,7 +35,7 @@ export default function Compare() {
         >
           <span className="text-stroke">WordPress</span>{" "}
           <span className="text-muted-foreground font-mono text-2xl md:text-3xl align-middle">vs</span>{" "}
-          <span>Modern Tech Stack</span>
+          <span>{c.vldLabel}</span>
         </motion.h2>
 
         {/* Comparison table */}

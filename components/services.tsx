@@ -141,7 +141,7 @@ export default function Services() {
         >
           <span className="w-8 h-px bg-foreground/30" />
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            Our Services
+            {s.eyebrow}
           </span>
         </motion.div>
 

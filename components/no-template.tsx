@@ -2,36 +2,58 @@
 
 import { motion } from "framer-motion"
 import { fadeInUp, staggerContainer, inView } from "@/lib/motion"
+import { useLang } from "@/lib/i18n"
 
 export default function NoTemplate() {
+  const { t } = useLang()
+  const n = t.noTemplate
+
   return (
-    <section className="py-12 border-y border-outline bg-surface-variant/30">
+    <section className="py-32 lg:py-40 border-t border-foreground/10">
       <motion.div
         {...inView}
         variants={staggerContainer}
-        className="max-w-7xl mx-auto px-6 text-center"
+        className="max-w-7xl mx-auto px-6"
       >
-        <motion.span
+        {/* Eyebrow */}
+        <motion.div
           variants={fadeInUp}
-          className="text-xs font-bold tracking-[0.2em] text-primary uppercase mb-4 block"
+          className="flex items-center gap-3 mb-10"
         >
-          What Sets Us Apart
-        </motion.span>
+          <span className="w-8 h-px bg-foreground/30 shrink-0" />
+          <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+            {n.eyebrow}
+          </span>
+        </motion.div>
 
+        {/* Heading */}
         <motion.h2
           variants={fadeInUp}
-          className="font-headline text-3xl font-bold mb-4 tamil-text"
+          className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight mb-16 max-w-4xl"
         >
-          நாங்கள் உருவாக்குவது{" "}
-          <span className="px-2 py-1 bg-on-surface text-surface">
-            பூஜ்யம் டெம்ப்ளேட்.
-          </span>
+          {n.headline}{" "}
+          <span className="text-stroke">{n.headlineAccent}</span>
         </motion.h2>
 
-        <motion.p variants={fadeInUp} className="text-on-surface-variant max-w-2xl mx-auto text-sm tamil-text">
-          நாங்கள் React.js மற்றும் Next.js கொண்டு புதிதாக குறியீடு செய்கிறோம்.
-          WordPress போன்ற பழைய முறைகள் அல்ல.
-        </motion.p>
+        {/* Sub — displayed as a single prominent numbered row */}
+        <motion.div
+          variants={fadeInUp}
+          className="border-b border-foreground/10 py-8 group cursor-default"
+        >
+          <div className="flex items-start gap-8 md:gap-16">
+            <span className="font-mono text-sm text-muted-foreground shrink-0 pt-1">
+              01
+            </span>
+            <div className="flex-1">
+              <p className="font-display text-2xl mb-3 transition-transform duration-300 group-hover:translate-x-2">
+                {n.headlineAccent}
+              </p>
+              <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                {n.sub}
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   )

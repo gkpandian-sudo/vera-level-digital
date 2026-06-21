@@ -1,74 +1,79 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { X, Check } from "lucide-react"
-import { fadeInLeft, fadeInRight, fadeInUp, staggerContainer, inView } from "@/lib/motion"
-
-const wordpress = [
-  "மெதுவான லோடிங் வேகம் (3-7s)",
-  "Hacking மற்றும் plugin அபாயங்கள்",
-  "மாதாந்திர அப்டேட்கள் மற்றும் பராமரிப்பு",
-  "வரையறுக்கப்பட்ட வடிவமைப்பு சுதந்திரம்",
-  "மாதாந்திர hosting & plugin கட்டணங்கள்",
-]
-
-const nextjs = [
-  "அதிவேக செயல்திறன் (< 1s)",
-  "அதிகபட்ச பாதுகாப்பு (Static Generation)",
-  "பூஜ்ய பராமரிப்பு செலவுகள்",
-  "முழுமையான பிரத்தியேக வடிவமைப்பு",
-  "ஒரு முறை மட்டும் கட்டணம்",
-]
+import { fadeInUp, staggerContainer, inView } from "@/lib/motion"
+import { useLang } from "@/lib/i18n"
 
 export default function Compare() {
+  const { t } = useLang()
+  const c = t.compare
+
+  // Pair wordpress and nextjs items into rows
+  const rowCount = Math.max(c.wordpress.length, c.nextjs.length)
+
   return (
-    <section id="compare" className="py-24 bg-surface-variant/20 px-6 border-y border-outline">
+    <section id="compare" className="py-32 lg:py-40 px-6 border-t border-foreground/10">
       <div className="max-w-4xl mx-auto">
 
-        {/* Title */}
+        {/* Eyebrow */}
+        <motion.div
+          {...inView}
+          variants={fadeInUp}
+          className="flex items-center gap-3 mb-8"
+        >
+          <span className="w-8 h-px bg-foreground/30" />
+          <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+            Why Us
+          </span>
+        </motion.div>
+
+        {/* Heading */}
         <motion.h2
           {...inView}
           variants={fadeInUp}
-          className="font-headline text-3xl font-bold text-center mb-12"
+          className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight mb-16"
         >
-          WordPress vs Modern Tech Stack
+          <span className="text-stroke">WordPress</span>{" "}
+          <span className="text-muted-foreground font-mono text-2xl md:text-3xl align-middle">vs</span>{" "}
+          <span>Modern Tech Stack</span>
         </motion.h2>
 
-        {/* Two columns */}
+        {/* Comparison table */}
         <motion.div
           {...inView}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 rounded-xl overflow-hidden border border-outline"
+          className="border border-foreground/10"
         >
-          {/* WordPress column */}
-          <motion.div variants={fadeInLeft} className="bg-surface p-8 md:border-r border-outline">
-            <h3 className="font-bold text-red-500 mb-6 flex items-center gap-2">
-              <span>🚫</span> WordPress / CMS
-            </h3>
-            <ul className="space-y-4">
-              {wordpress.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-on-surface-variant tamil-text">
-                  <X size={14} className="text-red-500 mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* Header row */}
+          <div className="grid grid-cols-[1fr_1fr]">
+            <div className="py-4 px-6 border-b border-foreground/10">
+              <span className="font-mono text-sm text-muted-foreground">WordPress / CMS</span>
+            </div>
+            <div className="border-sketch py-4 px-6 border-b border-foreground/10 bg-primary/5">
+              <span className="font-mono text-sm text-foreground">Vera Level Digital</span>
+            </div>
+          </div>
 
-          {/* Next.js column */}
-          <motion.div variants={fadeInRight} className="bg-surface p-8">
-            <h3 className="font-bold text-success mb-6 flex items-center gap-2">
-              <Check size={16} /> Next.js / React
-            </h3>
-            <ul className="space-y-4">
-              {nextjs.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm tamil-text">
-                  <Check size={14} className="text-success mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* Data rows */}
+          {Array.from({ length: rowCount }).map((_, i) => (
+            <motion.div
+              key={i}
+              variants={fadeInUp}
+              className="border-b border-foreground/10 last:border-b-0 grid grid-cols-[1fr_1fr]"
+            >
+              {/* WordPress cell */}
+              <div className="py-4 px-6 flex items-start gap-3 text-sm text-muted-foreground">
+                <span className="font-mono text-muted-foreground shrink-0 mt-0.5">✗</span>
+                <span>{c.wordpress[i] ?? ""}</span>
+              </div>
+
+              {/* VLD cell */}
+              <div className="py-4 px-6 bg-primary/5 flex items-start gap-3 text-sm">
+                <span className="font-mono text-primary shrink-0 mt-0.5">✓</span>
+                <span>{c.nextjs[i] ?? ""}</span>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
       </div>

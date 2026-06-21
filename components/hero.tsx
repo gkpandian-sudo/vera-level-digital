@@ -7,9 +7,19 @@ import { AnimatedSphere } from "./animated-sphere"
 
 const WA_LINK = "https://wa.me/919632233776?text=Hello%2C%20I%27d%20like%20a%20free%20consultation%20for%20my%20website."
 
+function splitGraphemes(str: string): string[] {
+  if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+    const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" })
+    return [...seg.segment(str)].map((s) => s.segment)
+  }
+  return [...str]
+}
+
 export default function Hero() {
   const { t } = useLang()
   const h = t.hero
+  const headlineChars = splitGraphemes(h.headline)
+  const accentChars = splitGraphemes(h.headlineAccent)
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
@@ -55,7 +65,7 @@ export default function Hero() {
         <div className="mb-12 overflow-hidden">
           <h1 className="text-[clamp(3rem,10vw,9rem)] font-display leading-[0.9] tracking-tight">
             <span className="block">
-              {h.headline.split("").map((char, i) => (
+              {headlineChars.map((char, i) => (
                 <span
                   key={i}
                   className="inline-block animate-char-in"
@@ -66,11 +76,11 @@ export default function Hero() {
               ))}
             </span>
             <span className="block text-primary">
-              {h.headlineAccent.split("").map((char, i) => (
+              {accentChars.map((char, i) => (
                 <span
                   key={i}
                   className="inline-block animate-char-in"
-                  style={{ animationDelay: `${(h.headline.length + i) * 40}ms` }}
+                  style={{ animationDelay: `${(headlineChars.length + i) * 40}ms` }}
                 >
                   {char === " " ? " " : char}
                 </span>

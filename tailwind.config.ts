@@ -29,8 +29,8 @@ const config: Config = {
       fontFamily: {
         sans:      ["var(--font-instrument-sans)", "var(--font-tamil)", "var(--font-devanagari)", "system-ui", "sans-serif"],
         headline:  ["var(--font-instrument-sans)", "var(--font-tamil)", "var(--font-devanagari)", "system-ui", "sans-serif"],
-        display:   ["var(--font-instrument-serif)", "Georgia",   "serif"],
-        editorial: ["var(--font-instrument-serif)", "Georgia",   "serif"],
+        display:   ["var(--font-instrument-serif)", "var(--font-tamil)", "var(--font-devanagari)", "Georgia", "serif"],
+        editorial: ["var(--font-instrument-serif)", "var(--font-tamil)", "var(--font-devanagari)", "Georgia", "serif"],
         mono:      ["var(--font-jetbrains-mono)",   "monospace"],
       },
       borderRadius: {

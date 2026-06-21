@@ -303,13 +303,15 @@ const ta: Translations = {
     ],
   },
   portfolio: {
-    eyebrow: "GitHub Projects",
+    eyebrow: "Live Projects",
     headline: "Our Work",
-    viewGithub: "View on GitHub",
+    viewGithub: "Live பார்க்க",
     projects: [
-      { icon: "🎨", color: "bg-primary/10 border-primary/20",   title: "Krima Arts",    desc: "ஒரு கலை வணிகத்திற்காக உருவாக்கப்பட்ட creative arts showcase இணையதளம்.", tags: ["HTML", "CSS"], segment: "Creative / Arts", href: "https://github.com/gkpandian-sudo/krima_arts" },
-      { icon: "📧", color: "bg-success/10 border-success/20",   title: "Gmail Cleanup", desc: "Gmail-ல் உள்ள அனைத்து unread threads-ஐயும் bulk-ஆக read ஆக mark செய்யும் Google Apps Script.", tags: ["JavaScript", "Google Apps Script"], segment: "Automation / Productivity", href: "https://github.com/gkpandian-sudo/gmail-cleanup-" },
-      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20", title: "Pandian",    desc: "தனிப்பட்ட portfolio மற்றும் profile showcase — personal branding project.", tags: ["HTML", "Personal Project"], segment: "Portfolio", href: "https://github.com/gkpandian-sudo/pandian" },
+      { icon: "🎨", color: "bg-primary/10 border-primary/20",       title: "Krima Arts",        desc: "ஒரு கலை வணிகத்திற்காக உருவாக்கப்பட்ட creative arts showcase இணையதளம்.",     tags: ["Next.js", "Design"],          segment: "Creative / Arts",    href: "https://krima-arts.vercel.app/" },
+      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20",   title: "Pandian",           desc: "தனிப்பட்ட portfolio மற்றும் profile showcase — personal branding project.",  tags: ["Next.js", "Portfolio"],       segment: "Portfolio",          href: "https://pandian.vercel.app/" },
+      { icon: "🚀", color: "bg-[#EF4444]/10 border-[#EF4444]/20",   title: "Dhamaka Digital",   desc: "ஒரு digital marketing agency-க்காக கட்டப்பட்ட full-stack agency இணையதளம்.",  tags: ["Next.js", "Agency"],          segment: "Digital Agency",     href: "https://dhamaka-digital.vercel.app/" },
+      { icon: "🍛", color: "bg-[#F97316]/10 border-[#F97316]/20",   title: "Murugan Mess",      desc: "சென்னையில் உள்ள ஒரு உணவகத்திற்காக உருவாக்கப்பட்ட restaurant இணையதளம்.",    tags: ["Next.js", "Food & Dining"],   segment: "Food & Restaurant",  href: "https://murugan-mess.netlify.app/" },
+      { icon: "💹", color: "bg-success/10 border-success/20",        title: "Vera Level Forex",  desc: "Forex trading-க்கான நவீன platform — market insights மற்றும் trading tools.", tags: ["Next.js", "Finance"],         segment: "Finance / Trading",  href: "https://vera-level-forex.vercel.app/" },
     ],
   },
   faq: {
@@ -472,13 +474,15 @@ const hi: Translations = {
     ],
   },
   portfolio: {
-    eyebrow: "GitHub Projects",
+    eyebrow: "Live Projects",
     headline: "हमारा काम",
-    viewGithub: "GitHub पर देखें",
+    viewGithub: "Live देखें",
     projects: [
-      { icon: "🎨", color: "bg-primary/10 border-primary/20",   title: "Krima Arts",    desc: "एक art business के लिए बनाया गया creative arts showcase website।", tags: ["HTML", "CSS"], segment: "Creative / Arts", href: "https://github.com/gkpandian-sudo/krima_arts" },
-      { icon: "📧", color: "bg-success/10 border-success/20",   title: "Gmail Cleanup", desc: "Gmail के सभी unread threads को bulk read mark करने वाला Google Apps Script।", tags: ["JavaScript", "Google Apps Script"], segment: "Automation / Productivity", href: "https://github.com/gkpandian-sudo/gmail-cleanup-" },
-      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20", title: "Pandian",    desc: "Personal portfolio और profile showcase — personal branding project।", tags: ["HTML", "Personal Project"], segment: "Portfolio", href: "https://github.com/gkpandian-sudo/pandian" },
+      { icon: "🎨", color: "bg-primary/10 border-primary/20",       title: "Krima Arts",        desc: "एक art business के लिए बनाया गया creative arts showcase website।",            tags: ["Next.js", "Design"],          segment: "Creative / Arts",    href: "https://krima-arts.vercel.app/" },
+      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20",   title: "Pandian",           desc: "Personal portfolio और profile showcase — personal branding project।",          tags: ["Next.js", "Portfolio"],       segment: "Portfolio",          href: "https://pandian.vercel.app/" },
+      { icon: "🚀", color: "bg-[#EF4444]/10 border-[#EF4444]/20",   title: "Dhamaka Digital",   desc: "एक digital marketing agency के लिए बनाया गया full-stack agency website।",     tags: ["Next.js", "Agency"],          segment: "Digital Agency",     href: "https://dhamaka-digital.vercel.app/" },
+      { icon: "🍛", color: "bg-[#F97316]/10 border-[#F97316]/20",   title: "Murugan Mess",      desc: "Chennai के एक restaurant के लिए बनाया गया food ordering website।",            tags: ["Next.js", "Food & Dining"],   segment: "Food & Restaurant",  href: "https://murugan-mess.netlify.app/" },
+      { icon: "💹", color: "bg-success/10 border-success/20",        title: "Vera Level Forex",  desc: "Forex trading के लिए modern platform — market insights और trading tools।",    tags: ["Next.js", "Finance"],         segment: "Finance / Trading",  href: "https://vera-level-forex.vercel.app/" },
     ],
   },
   faq: {
@@ -641,13 +645,15 @@ const en: Translations = {
     ],
   },
   portfolio: {
-    eyebrow: "GitHub Projects",
+    eyebrow: "Live Projects",
     headline: "Our Work",
-    viewGithub: "View on GitHub",
+    viewGithub: "View Live",
     projects: [
-      { icon: "🎨", color: "bg-primary/10 border-primary/20",   title: "Krima Arts",    desc: "A creative arts showcase website built for an art business.", tags: ["HTML", "CSS"], segment: "Creative / Arts", href: "https://github.com/gkpandian-sudo/krima_arts" },
-      { icon: "📧", color: "bg-success/10 border-success/20",   title: "Gmail Cleanup", desc: "A Google Apps Script that bulk-marks all unread Gmail threads as read.", tags: ["JavaScript", "Google Apps Script"], segment: "Automation / Productivity", href: "https://github.com/gkpandian-sudo/gmail-cleanup-" },
-      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20", title: "Pandian",    desc: "Personal portfolio and profile showcase — a personal branding project.", tags: ["HTML", "Personal Project"], segment: "Portfolio", href: "https://github.com/gkpandian-sudo/pandian" },
+      { icon: "🎨", color: "bg-primary/10 border-primary/20",       title: "Krima Arts",        desc: "A creative arts showcase website built for an art business.",                  tags: ["Next.js", "Design"],          segment: "Creative / Arts",    href: "https://krima-arts.vercel.app/" },
+      { icon: "👤", color: "bg-[#F59E0B]/10 border-[#F59E0B]/20",   title: "Pandian",           desc: "Personal portfolio and profile showcase — a personal branding project.",       tags: ["Next.js", "Portfolio"],       segment: "Portfolio",          href: "https://pandian.vercel.app/" },
+      { icon: "🚀", color: "bg-[#EF4444]/10 border-[#EF4444]/20",   title: "Dhamaka Digital",   desc: "A full-stack agency website built for a digital marketing agency.",            tags: ["Next.js", "Agency"],          segment: "Digital Agency",     href: "https://dhamaka-digital.vercel.app/" },
+      { icon: "🍛", color: "bg-[#F97316]/10 border-[#F97316]/20",   title: "Murugan Mess",      desc: "A restaurant website for a popular Chennai mess — menu, location & orders.",   tags: ["Next.js", "Food & Dining"],   segment: "Food & Restaurant",  href: "https://murugan-mess.netlify.app/" },
+      { icon: "💹", color: "bg-success/10 border-success/20",        title: "Vera Level Forex",  desc: "A modern forex trading platform with market insights and trading tools.",      tags: ["Next.js", "Finance"],         segment: "Finance / Trading",  href: "https://vera-level-forex.vercel.app/" },
     ],
   },
   faq: {

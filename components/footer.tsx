@@ -1,87 +1,102 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github } from "lucide-react"
 import { fadeInUp, staggerContainer, inView } from "@/lib/motion"
-
-const navLinks = [
-  { label: "Services",  href: "#services"   },
-  { label: "Pricing",   href: "#pricing"    },
-  { label: "Portfolio", href: "#portfolio"  },
-  { label: "GitHub",    href: "https://github.com/gkpandian-sudo", external: true },
-]
+import { useLang } from "@/lib/i18n"
 
 export default function Footer() {
+  const { t } = useLang()
+  const f = t.footer
+  const navLinks = t.nav.links
+
   return (
-    <footer className="py-16 px-6 border-t border-outline bg-surface text-sm">
+    <footer className="border-t border-foreground/10 py-20 px-6">
       <div className="max-w-7xl mx-auto">
 
+        {/* Top row: logo left, nav links right */}
         <motion.div
           {...inView}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mb-12"
         >
-          {/* Brand */}
+          {/* Logo */}
           <motion.div variants={fadeInUp}>
-            <div className="font-headline text-lg font-bold mb-6">Vera Level Digital</div>
-            <p className="text-on-surface-variant leading-relaxed tamil-text">
-              Vera Level web solutions for namma Chennai businesses.
-            </p>
+            <span className="font-display text-2xl select-none">
+              <span className="text-primary">V</span>
+              <span className="text-foreground">L</span>
+              <span className="text-[#f97316]">D</span>
+            </span>
           </motion.div>
 
-          {/* Links */}
-          <motion.div variants={fadeInUp}>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] text-primary mb-6">
-              Quick Links
-            </h4>
-            <div className="flex flex-col gap-3">
-              {navLinks.map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target={l.external ? "_blank" : undefined}
-                  rel={l.external ? "noopener noreferrer" : undefined}
-                  className="text-on-surface-variant hover:text-on-surface transition-colors tamil-text"
-                >
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Contact */}
-          <motion.div variants={fadeInUp}>
-            <h4 className="font-bold uppercase tracking-widest text-[10px] text-primary mb-6">
-              Contact
-            </h4>
-            <div className="flex flex-col gap-4">
+          {/* Nav links */}
+          <motion.nav
+            variants={fadeInUp}
+            className="flex flex-wrap gap-x-6 gap-y-3"
+          >
+            {navLinks.map((l) => (
               <a
-                href="https://wa.me/919632233776"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors"
+                key={l.href}
+                href={l.href}
+                className="relative group text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                💬 +91 96322 33776
+                {l.label}
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
               </a>
-              <a
-                href="https://github.com/gkpandian-sudo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors"
-              >
-                <Github size={14} /> github.com/gkpandian-sudo
-              </a>
-            </div>
-          </motion.div>
+            ))}
+          </motion.nav>
         </motion.div>
 
-        {/* Copyright */}
+        {/* Middle row: tagline + WhatsApp */}
         <motion.div
           {...inView}
           variants={fadeInUp}
-          className="mt-16 pt-8 border-t border-outline text-center text-on-surface-variant text-xs tamil-text"
+          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-0"
         >
-          © 2025 Vera Level Digital. All rights reserved.
+          <p className="text-sm text-muted-foreground max-w-sm">{f.tagline}</p>
+
+          <a
+            href="https://wa.me/919632233776"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            💬 +91 96322 33776
+            <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+          </a>
+        </motion.div>
+
+        {/* Bottom bar */}
+        <motion.div
+          {...inView}
+          variants={fadeInUp}
+          className="border-t border-foreground/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
+          <span className="font-mono text-xs text-muted-foreground">
+            {f.copyright}
+          </span>
+
+          <div className="flex gap-6">
+            <a
+              href="#"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy
+            </a>
+            <a
+              href="#"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms
+            </a>
+            <a
+              href="https://github.com/gkpandian-sudo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
         </motion.div>
 
       </div>

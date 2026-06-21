@@ -1,90 +1,140 @@
-/* -- Vera Level Digital — Global Styles --
-   CSS custom properties drive every color token.
-   Toggling .dark on <html> switches the entire palette instantly.
-   All tokens use space-separated RGB channels so Tailwind's opacity
-   modifier syntax (bg-surface/80) works without any extra config.        */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Font faces (loaded via next/font in layout.tsx) ─────────────────── */
+/* ── Font variables ── */
 :root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --font-space-grotesk: "Space Grotesk", system-ui, sans-serif;
+  --font-instrument-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-instrument-serif: "Instrument Serif", Georgia, serif;
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
 }
 
-/* ── Light theme (default) ──────────────────────────────────────────── */
+/* ── Light theme ── */
 :root {
+  /* Optimus tokens (RGB channels for Tailwind /alpha support) */
+  --background:        251 250 247;
+  --foreground:         28  25  20;
+  --muted:             239 238 234;
+  --muted-foreground:  109 103  90;
+  --border:            221 219 212;
+
+  /* Legacy tokens (same values — keeps whatsapp-float and other unchanged components working) */
   --color-primary:     0 98 255;
-  --color-surface:     255 255 255;
-  --color-sv:          244 244 245;
-  --color-on-surface:  9 9 11;
-  --color-osv:         82 82 91;
-  --color-outline:     228 228 231;
+  --color-surface:     251 250 247;
+  --color-sv:          239 238 234;
+  --color-on-surface:   28  25  20;
+  --color-osv:         109 103  90;
+  --color-outline:     221 219 212;
   --color-success:     0 166 90;
-  --color-gold:        184 134 42;   /* #b8862a */
+  --color-gold:        184 134 42;
 }
 
-/* ── Dark theme ──────────────────────────────────────────────────────── */
+/* ── Dark theme ── */
 .dark {
-  --color-primary:     0 98 255;
-  --color-surface:     10 10 10;
-  --color-sv:          26 26 26;
-  --color-on-surface:  255 255 255;
-  --color-osv:         161 161 170;
-  --color-outline:     39 39 42;
+  --background:         21  19  16;
+  --foreground:        248 247 244;
+  --muted:              43  41  36;
+  --muted-foreground:  146 141 128;
+  --border:             53  51  45;
+
+  --color-primary:      56 130 255;
+  --color-surface:      21  19  16;
+  --color-sv:           43  41  36;
+  --color-on-surface:  248 247 244;
+  --color-osv:         146 141 128;
+  --color-outline:      53  51  45;
   --color-success:     0 228 117;
-  --color-gold:        232 201 106;  /* #e8c96a */
+  --color-gold:        232 201 106;
 }
 
-/* ── Base resets ────────────────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* ── Base resets ── */
+*, *::before, *::after { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: rgb(var(--color-surface));
-  color: rgb(var(--color-on-surface));
-  font-family: var(--font-inter);
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-instrument-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Smooth theme transitions */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-instrument-serif);
 }
 
-/* ── Glassmorphism utility ──────────────────────────────────────────── */
-.glass {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+/* ── Devanagari (Hindi) ── */
+:root[lang="hi"] body { font-family: var(--font-devanagari), var(--font-instrument-sans), system-ui, sans-serif; }
+:root[lang="hi"] h1, :root[lang="hi"] h2, :root[lang="hi"] h3,
+:root[lang="hi"] h4, :root[lang="hi"] h5, :root[lang="hi"] h6 {
+  font-family: var(--font-devanagari), var(--font-instrument-serif), Georgia, serif;
 }
+.tamil-text    { line-height: 1.75; }
+.devanagari-text { font-family: var(--font-devanagari), var(--font-instrument-sans), system-ui, sans-serif; line-height: 1.8; }
 
-/* ── Marquee animation ──────────────────────────────────────────────── */
+/* ── Glassmorphism ── */
+.glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+/* ── Scrollbar (dark) ── */
+.dark ::-webkit-scrollbar         { width: 6px; }
+.dark ::-webkit-scrollbar-track   { background: rgb(var(--background)); }
+.dark ::-webkit-scrollbar-thumb   { background: rgb(var(--border)); border-radius: 3px; }
+
+/* ── Marquee ── */
 @keyframes marquee {
   0%   { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
+.animate-marquee { animation: marquee 30s linear infinite; display: flex; width: max-content; }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-  display: flex;
-  width: max-content;
+/* ════════════════════════════════════════
+   OPTIMUS UTILITIES
+   ════════════════════════════════════════ */
+
+/* Noise overlay */
+.noise-overlay { position: relative; }
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* ── Tamil text line-height fix ─────────────────────────────────────── */
-.tamil-text {
-  line-height: 1.75;
+/* Character blur-in */
+.animate-char-in {
+  animation: char-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+  filter: blur(40px);
+  transform: translateY(100%);
+}
+@keyframes char-in {
+  0%   { opacity: 0; filter: blur(40px); transform: translateY(100%); }
+  100% { opacity: 1; filter: blur(0);    transform: translateY(0); }
 }
 
-/* ── Custom scrollbar (dark mode) ───────────────────────────────────── */
-.dark ::-webkit-scrollbar         { width: 6px; }
-.dark ::-webkit-scrollbar-track   { background: rgb(var(--color-surface)); }
-.dark ::-webkit-scrollbar-thumb   { background: rgb(var(--color-outline)); border-radius: 3px; }
+/* Text-stroke (outlined/hollow text) */
+.text-stroke {
+  -webkit-text-stroke: 1.5px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hatched sketch border */
+.border-sketch {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgb(var(--background)), rgb(var(--background))) padding-box,
+    repeating-linear-gradient(135deg, rgb(var(--foreground)) 0, rgb(var(--foreground)) 1px, transparent 0, transparent 50%) border-box;
+  background-size: 100% 100%, 8px 8px;
+}
+
+/* Hover lift spring */
+.hover-lift { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.hover-lift:hover { transform: translateY(-4px); }
+
+/* Font display utility */
+.font-display { font-family: var(--font-instrument-serif), Georgia, serif; }

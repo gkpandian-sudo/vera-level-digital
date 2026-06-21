@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <Nav />
 
-      <main>
+      <main className="relative overflow-x-hidden noise-overlay">
         <Hero />
         <NoTemplate />
         <Value />

@@ -1,7 +1,3 @@
-// -- Vera Level Digital — Tailwind configuration --
-// Color tokens are CSS-variable–backed so dark/light toggling
-// never touches component markup — only :root vs .dark variables change.
-
 import type { Config } from "tailwindcss"
 
 const config: Config = {
@@ -13,8 +9,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // -- Design tokens (map to CSS vars defined in globals.css) ----------
       colors: {
+        // Legacy tokens (unchanged components keep working)
         primary:              "rgb(var(--color-primary)    / <alpha-value>)",
         surface:              "rgb(var(--color-surface)    / <alpha-value>)",
         "surface-variant":    "rgb(var(--color-sv)         / <alpha-value>)",
@@ -23,14 +19,20 @@ const config: Config = {
         outline:              "rgb(var(--color-outline)    / <alpha-value>)",
         success:              "rgb(var(--color-success)    / <alpha-value>)",
         gold:                 "rgb(var(--color-gold)       / <alpha-value>)",
+        // Optimus tokens
+        background:           "rgb(var(--background)           / <alpha-value>)",
+        foreground:           "rgb(var(--foreground)           / <alpha-value>)",
+        muted:                "rgb(var(--muted)                / <alpha-value>)",
+        "muted-foreground":   "rgb(var(--muted-foreground)     / <alpha-value>)",
+        border:               "rgb(var(--border)               / <alpha-value>)",
       },
-      // -- Typography -------------------------------------------------------
       fontFamily: {
-        sans:      ["var(--font-inter)",         "system-ui", "sans-serif"],
-        headline:  ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
-        editorial: ["var(--font-cormorant)",     "Georgia",   "serif"],
+        sans:      ["var(--font-instrument-sans)",  "system-ui", "sans-serif"],
+        headline:  ["var(--font-instrument-sans)",  "system-ui", "sans-serif"],
+        display:   ["var(--font-instrument-serif)", "Georgia",   "serif"],
+        editorial: ["var(--font-instrument-serif)", "Georgia",   "serif"],
+        mono:      ["var(--font-jetbrains-mono)",   "monospace"],
       },
-      // -- Border radius ----------------------------------------------------
       borderRadius: {
         sm:      "0.25rem",
         DEFAULT: "0.375rem",
@@ -39,7 +41,6 @@ const config: Config = {
         xl:      "1rem",
         "2xl":   "1.5rem",
       },
-      // -- Keyframes --------------------------------------------------------
       keyframes: {
         marquee: {
           "0%":   { transform: "translateX(0%)" },
@@ -51,7 +52,7 @@ const config: Config = {
         },
       },
       animation: {
-        marquee:  "marquee 30s linear infinite",
+        marquee:   "marquee 30s linear infinite",
         "fade-in": "fade-in 0.4s ease forwards",
       },
     },

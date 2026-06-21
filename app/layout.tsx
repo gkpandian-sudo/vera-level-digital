@@ -1,58 +1,57 @@
-// -- Vera Level Digital — Root Layout --
-// Loads fonts, injects no-flash theme script, wraps in ThemeProvider.
-
 import type { Metadata } from "next"
-import { Inter, Space_Grotesk, Cormorant_Garamond } from "next/font/google"
+import { Instrument_Sans, Instrument_Serif, JetBrains_Mono, Noto_Sans_Devanagari } from "next/font/google"
 import Script from "next/script"
 import { ThemeProvider, themeScript } from "@/lib/theme"
+import { LangProvider } from "@/lib/i18n"
 import "./globals.css"
 
-// ── Google Fonts ─────────────────────────────────────────────────────
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-instrument-sans",
   display: "swap",
 })
 
-const spaceGrotesk = Space_Grotesk({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-instrument-serif",
+  weight: "400",
+  display: "swap",
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  weight: ["400", "500"],
+  display: "swap",
+})
+
+const notoDevanagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari"],
+  variable: "--font-devanagari",
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 })
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  display: "swap",
-})
-
-// ── Page metadata ─────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title:       "Vera Level Digital — Web Solutions for Namma Chennai Businesses",
-  description: "Tamil businesses கோஸ்கான அதிவேக, custom Next.js இணையதளங்கள். ₹10,000 முதல் தொடங்குகிறது.",
-  keywords:    ["web development", "Next.js", "Tamil Nadu", "Chennai", "business website", "Vera Level Digital"],
+  title:       "Vera Level Digital — Web Solutions for India Businesses",
+  description: "Custom Next.js websites for Tamil, Hindi & English-speaking businesses. Starting ₹10,000.",
+  keywords:    ["web development", "Next.js", "Tamil Nadu", "Chennai", "India", "business website", "Vera Level Digital"],
   openGraph: {
     title:       "Vera Level Digital",
-    description: "Vera Level Web Solutions for Namma Chennai Businesses",
+    description: "Vera Level Web Solutions for India Businesses — Tamil | हिंदी | English",
     type:        "website",
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // -- Dark class applied here; ThemeProvider + inline script keep it in sync --
     <html lang="ta" className="dark" suppressHydrationWarning>
       <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
-      <body className={`${inter.variable} ${spaceGrotesk.variable} ${cormorant.variable} font-sans bg-surface text-on-surface`}>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${notoDevanagari.variable} font-sans`}>
         <ThemeProvider>
-          {children}
+          <LangProvider>
+            {children}
+          </LangProvider>
         </ThemeProvider>
       </body>
     </html>

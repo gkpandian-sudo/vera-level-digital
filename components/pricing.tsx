@@ -2,128 +2,99 @@
 
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
-import { fadeInUp, scaleIn, staggerContainer, inView, EASE } from "@/lib/motion"
-
-type Tier = {
-  name:     string
-  price:    string
-  timeline: string
-  features: string[]
-  cta:      string
-  waMsg:    string
-  popular?: boolean
-}
-
-const tiers: Tier[] = [
-  {
-    name:     "Starter",
-    price:    "₹10,000 - 15,000",
-    timeline: "Ready in 5-7 Days",
-    features: [
-      "1 Landing Page",
-      "WhatsApp CTA button",
-      "Google Maps இணைப்பு",
-      "Mobile-responsive",
-      "Basic SEO",
-      "Vercel hosting",
-      "1 revision",
-    ],
-    cta:   "Choose Plan",
-    waMsg: "Hello%2C%20I%27m%20interested%20in%20the%20Starter%20package.",
-  },
-  {
-    name:     "Standard",
-    price:    "₹25,000 - 40,000",
-    timeline: "Ready in 10-14 Days",
-    features: [
-      "3-5 Pages",
-      "Photo / Video Gallery",
-      "Services & Pricing page",
-      "WhatsApp integration",
-      "Full SEO",
-      "Google Analytics",
-      "3 revisions",
-    ],
-    cta:     "Start Now",
-    waMsg:   "Hello%2C%20I%27m%20interested%20in%20the%20Standard%20package.",
-    popular: true,
-  },
-  {
-    name:     "Custom",
-    price:    "₹60,000+",
-    timeline: "Ready in 14-30 Days",
-    features: [
-      "Multi-page & Dashboard",
-      "Booking system",
-      "Admin dashboard",
-      "Database integration",
-      "WhatsApp bot",
-      "Unlimited revisions",
-      "1 month support",
-    ],
-    cta:   "Get a Quote",
-    waMsg: "Hello%2C%20I%27d%20like%20to%20discuss%20a%20custom%20project.",
-  },
-]
+import { fadeInUp, staggerContainer, inView } from "@/lib/motion"
+import { useLang } from "@/lib/i18n"
 
 export default function Pricing() {
+  const { t } = useLang()
+  const p = t.pricing
+
   return (
-    <section id="pricing" className="py-24 bg-surface-variant/10 px-6 border-t border-outline">
+    <section id="pricing" className="py-32 lg:py-40 border-t border-foreground/10 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <motion.div {...inView} variants={staggerContainer} className="text-center mb-16">
-          <motion.h2 variants={fadeInUp} className="font-headline text-4xl font-bold mb-4">
-            Transparent{" "}
-            <span className="bg-primary px-2 text-white">Pricing</span>
+        <motion.div {...inView} variants={staggerContainer} className="mb-20">
+          {/* Eyebrow */}
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 mb-8">
+            <span className="w-8 h-px bg-foreground/30" />
+            <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+              Pricing
+            </span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h2
+            variants={fadeInUp}
+            className="font-display text-5xl md:text-6xl lg:text-7xl tracking-tight"
+          >
+            {p.headline}{" "}
+            <span className="text-stroke">{p.headlineAccent}</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-on-surface-variant">
-            No hidden fees. One-time payment only.
+
+          <motion.p
+            variants={fadeInUp}
+            className="mt-6 text-muted-foreground max-w-xl"
+          >
+            {p.sub}
           </motion.p>
         </motion.div>
 
-        {/* Tier cards */}
+        {/* Pricing grid — gap-px on bg-foreground/10 creates thin divider lines */}
         <motion.div
           {...inView}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
+          className="grid md:grid-cols-3 gap-px bg-foreground/10"
         >
-          {tiers.map((tier) => (
+          {p.tiers.map((tier, idx) => (
             <motion.div
               key={tier.name}
-              variants={tier.popular ? scaleIn : fadeInUp}
-              whileHover={
-                tier.popular
-                  ? undefined
-                  : { y: -6, transition: { duration: 0.25, ease: EASE } }
-              }
+              variants={fadeInUp}
               className={[
-                "bg-surface rounded-xl p-8 flex flex-col relative",
+                "bg-background flex flex-col p-8 lg:p-12 relative",
                 tier.popular
-                  ? "border-2 border-primary shadow-[0_0_40px_rgba(0,98,255,0.15)]"
-                  : "border border-outline",
+                  ? "md:-my-4 md:py-16 border-2 border-primary"
+                  : "",
               ].join(" ")}
             >
-              {/* Popular badge */}
+              {/* Most Popular badge */}
               {tier.popular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] px-4 py-1 rounded-full font-black tracking-widest uppercase">
-                  Popular
+                <div className="absolute -top-3 left-8 px-3 py-1 bg-primary text-white text-xs font-mono uppercase tracking-widest">
+                  Most Popular
                 </div>
               )}
 
-              <h3 className="font-headline text-xl font-bold mb-2">{tier.name}</h3>
-              <div className="font-headline text-3xl font-bold mb-1">{tier.price}</div>
-              <div className="text-xs text-on-surface-variant mb-6 tamil-text">{tier.timeline}</div>
+              {/* Plan number */}
+              <div className="font-mono text-xs text-muted-foreground mb-4">
+                {String(idx + 1).padStart(2, "0")}
+              </div>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              {/* Plan name */}
+              <h3 className="font-display text-3xl text-foreground mt-2">
+                {tier.name}
+              </h3>
+
+              {/* Timeline / description */}
+              <p className="text-sm text-muted-foreground mt-2 mb-8">
+                {tier.timeline}
+              </p>
+
+              {/* Price */}
+              <div className="font-display text-5xl lg:text-6xl text-foreground mb-8 leading-none">
+                {tier.price}
+              </div>
+
+              {/* Feature list */}
+              <ul className="space-y-3 mb-10 flex-grow">
                 {tier.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm tamil-text">
-                    <Check size={15} className="text-primary shrink-0" />
-                    <span className={tier.popular ? "" : "text-on-surface-variant"}>{f}</span>
+                  <li key={f} className="flex items-start gap-3">
+                    <Check size={15} className="text-primary shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">{f}</span>
                   </li>
                 ))}
               </ul>
 
+              {/* CTA button */}
               <motion.a
                 href={`https://wa.me/919632233776?text=${tier.waMsg}`}
                 target="_blank"
@@ -131,10 +102,10 @@ export default function Pricing() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 className={[
-                  "w-full py-3 rounded-lg font-bold text-center block transition-opacity",
+                  "w-full py-4 text-center block font-mono text-sm tracking-wide transition-colors",
                   tier.popular
                     ? "bg-primary text-white hover:opacity-90"
-                    : "border border-outline hover:bg-surface-variant",
+                    : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5",
                 ].join(" ")}
               >
                 {tier.cta}
@@ -143,12 +114,13 @@ export default function Pricing() {
           ))}
         </motion.div>
 
+        {/* Footnote */}
         <motion.p
           {...inView}
           variants={fadeInUp}
-          className="text-center text-[10px] text-on-surface-variant mt-10 uppercase tracking-widest"
+          className="text-center text-[10px] text-muted-foreground mt-10 uppercase tracking-widest font-mono"
         >
-          Prices may vary by project scope. One-time payment only.
+          {p.footnote}
         </motion.p>
 
       </div>
